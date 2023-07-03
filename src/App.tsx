@@ -24,7 +24,7 @@ function App() {
       console.error('Error:', error);
     }
   };
-
+*/
   const updateData = async (value: WorkPlanInterface) => {
     try {
       const response = await fetch('http://localhost:3001/api/planes-de-trabajo/' + value.id, {
@@ -40,7 +40,7 @@ function App() {
       console.error('Error:', error);
     }
   }
-  */
+
   return (
     <div className="App">
       <h1>ALGO PARA CONTAR</h1>
