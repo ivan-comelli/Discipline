@@ -7,7 +7,7 @@ import { WorkPlanModel, TaskModel, ToolModel, MaterialModel } from '../db/models
 const router = Router();
 
 // Obtener todos los usuarios
-router.get('/api/planes-de-trabajo', async (req: Request, res: Response) => {
+router.get('/planes-de-trabajo', async (req: Request, res: Response) => {
   try {
     const plan = await WorkPlanModel.findAll({
       include: [{model: TaskModel, as: 'tasks'}, {model: ToolModel, as: 'tools'}, {model: MaterialModel, as: 'materials'}]
@@ -18,7 +18,7 @@ router.get('/api/planes-de-trabajo', async (req: Request, res: Response) => {
   }
 });
 
-router.put('/api/planes-de-trabajo/:id', async (req: Request, res: Response) => {
+router.put('/planes-de-trabajo/:id', async (req: Request, res: Response) => {
   const {
     id, workName, workDays, totalTime, fidelityPercentage, note, tasks, tools, materials
   }: WorkPlanInterface = req.body; 
