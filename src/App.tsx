@@ -9,7 +9,7 @@ function App() {
 
   const [data, setData] = useState<WorkPlanInterface[]>([]);
   const [loading, setLoading] = useState(true);
-
+/*
   useEffect(() => {
     fetchData();
   }, []);
@@ -40,7 +40,7 @@ function App() {
       console.error('Error:', error);
     }
   }
-  
+  */
   return (
     <div className="App">
       <h1>ALGO PARA CONTAR</h1>
