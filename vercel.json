@@ -1,11 +1,12 @@
-{
+ {
     "version": 2,
     "builds": [
-      { "src": "client/package.json", "use": "@vercel/static-build" },
-      { "src": "server.js", "use": "@vercel/node" }
+      { "src": "build/static/**", "use": "@vercel/static" },
+      { "src": "build/index.html", "use": "@vercel/static" },
+      { "src": "/api/.*", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/api/.*", "dest": "server.js" },
-      { "src": "/(.*)", "dest": "client/index.html" }
+      { "src": "/api/(.*)", "dest": "/api/$1" },
+      { "src": "/(.*)", "dest": "/build/index.html" }
     ]
   }
